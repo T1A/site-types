@@ -1,0 +1,10 @@
+:root[data-preset="t1a"] {
+  --heading-weight-shift: 50;
+  --heading-tracking: 0;
+  /* The template keeps orange off navy: on dark the accent is teal and the logo is white.
+     --*-tone is 1 on dark, for the t1a backgrounds in slide.css. */
+  --l-logo: #FF6D00; --d-logo: #FCFCFC;
+  --l-tone: 0; --d-tone: 1;
+}
+:root[data-preset="t1a"][data-scheme="light"] { --s-logo: var(--l-logo); --s-tone: var(--l-tone); }
+:root[data-preset="t1a"][data-scheme="dark"] { --s-logo: var(--d-logo); --s-tone: var(--d-tone); }

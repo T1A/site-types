@@ -1,0 +1,4 @@
+checks/node_modules/
+checks/out/
+validation/
+dist/

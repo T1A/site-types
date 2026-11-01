@@ -1,0 +1,15 @@
+:root[data-preset="lakesentry"] {
+  --font-body: "Inter Variable", var(--font-fallback);
+  --l-logo-img: url("/_type/brand/lakesentry-logo.svg"); --d-logo-img: url("/_type/brand/lakesentry-logo-inverted.svg");
+  --font-lead: "Plus Jakarta Sans Variable", "Inter Variable", var(--font-fallback);
+  --heading-weight-shift: 50;
+  --heading-tracking: 0.6;
+  --radius-scale: 0.5;
+  --eyebrow-tracking: 0.04em;
+  /* Lead text is lavender gray with the key phrases in strong; red and green mark one number or word. */
+  --l-lead: #A1A1B4; --d-lead: #7F8DB8;
+  --l-signal: #BC473B; --d-signal: #FF7A6B;
+  --l-good: #2E9E5B; --d-good: #4ACB7E;
+}
+:root[data-preset="lakesentry"][data-scheme="light"] { --s-logo-img: var(--l-logo-img); --s-lead: var(--l-lead); --s-signal: var(--l-signal); --s-good: var(--l-good); }
+:root[data-preset="lakesentry"][data-scheme="dark"] { --s-logo-img: var(--d-logo-img); --s-lead: var(--d-lead); --s-signal: var(--d-signal); --s-good: var(--d-good); }

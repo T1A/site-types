@@ -1,0 +1,10 @@
+:root[data-preset="swiss"] {
+  --heading-weight-shift: 100;
+  --heading-tracking: 0.85;
+  --radius-scale: 0;
+  --eyebrow-tracking: 0;
+  /* --*-tone is 1 on dark: the glow behind covers in slide.css. */
+  --l-tone: 0; --d-tone: 1;
+}
+:root[data-preset="swiss"][data-scheme="light"] { --s-tone: var(--l-tone); }
+:root[data-preset="swiss"][data-scheme="dark"] { --s-tone: var(--d-tone); }

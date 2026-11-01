@@ -1,0 +1,14 @@
+:root[data-preset="antares"] {
+  --font-display: "Helvetica Neue", Helvetica, Arial, "Inter Variable", sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, "Inter Variable", sans-serif;
+  --heading-weight-shift: 50;
+  --heading-tracking: 0.6;
+  --radius-scale: 0.6;
+  --eyebrow-tracking: 0;
+  /* Lead and statement text is this quiet gray, with the key phrases in strong at full contrast. */
+  --l-quiet: #A1A1B4; --d-quiet: #6A6A7C;
+  /* The cover gradient: a gray mist with a pale glow; orange and blue corners stay in both schemes. */
+  --l-mist: #C4C7CF; --d-mist: #17181D; --l-haze: #8E929C; --d-haze: #2E3038; --l-glow: #FFFFFF; --d-glow: #4A4E5C;
+}
+:root[data-preset="antares"][data-scheme="light"] { --s-quiet: var(--l-quiet); --s-mist: var(--l-mist); --s-haze: var(--l-haze); --s-glow: var(--l-glow); }
+:root[data-preset="antares"][data-scheme="dark"] { --s-quiet: var(--d-quiet); --s-mist: var(--d-mist); --s-haze: var(--d-haze); --s-glow: var(--d-glow); }

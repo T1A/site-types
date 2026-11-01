@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "title": "getantares.io",
+  "lang": "en",
+  "order": [
+    "cover",
+    "challenge",
+    "why",
+    "analyzer",
+    "converter",
+    "architecture",
+    "migrate",
+    "options"
+  ],
+  "theme": {
+    "preset": "antares"
+  }
+}

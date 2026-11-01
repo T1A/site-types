@@ -1,0 +1,50 @@
+{
+  "v": 1,
+  "title": "Moving BI to Databricks",
+  "lang": "en",
+  "order": [
+    "cover",
+    "agenda",
+    "section-scope",
+    "one-pager",
+    "case-results",
+    "case-sheet",
+    "similar-cases",
+    "partner-case",
+    "showcase",
+    "phone",
+    "statement",
+    "timeline",
+    "timeline-detailed",
+    "journey",
+    "journey-owners",
+    "gantt",
+    "points-2",
+    "points-6",
+    "list-six",
+    "roles",
+    "roles-left",
+    "team",
+    "clients",
+    "packages",
+    "comparison",
+    "compare-detail",
+    "table-chart",
+    "ask",
+    "orange-text"
+  ],
+  "sections": {
+    "scope": {
+      "title": "Scope",
+      "start": "section-scope"
+    },
+    "plan": {
+      "title": "Plan",
+      "start": "timeline"
+    }
+  },
+  "theme": {
+    "preset": "t1a",
+    "scheme": "light"
+  }
+}

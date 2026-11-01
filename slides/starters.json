@@ -1,0 +1,725 @@
+{
+  "starters": [
+    {
+      "id": "board",
+      "title": "Board update",
+      "description": "Quarter results, customers, risks and the next quarter",
+      "hint": "For example: Q3 results for the board. Attach the finance export.",
+      "coverTitle": "Q3 business review",
+      "coverLabel": "Board update",
+      "directory": "starters/board",
+      "showcase": 1,
+      "blocks": [
+        {
+          "id": "results",
+          "title": "Results",
+          "note": "Revenue and margin against plan, from your numbers",
+          "level": 2,
+          "samples": [
+            "project/slides/results.html",
+            "project/slides/results-2.html"
+          ]
+        },
+        {
+          "id": "customers",
+          "title": "Customers",
+          "note": "New logos, churn and expansion",
+          "level": 1,
+          "samples": [
+            "project/slides/customers.html"
+          ]
+        },
+        {
+          "id": "risks",
+          "title": "Risks",
+          "note": "What could go wrong and how we hedge",
+          "level": 1,
+          "samples": [
+            "project/slides/risks.html"
+          ]
+        },
+        {
+          "id": "next",
+          "title": "Next quarter",
+          "note": "Targets and the decisions you need",
+          "level": 2,
+          "samples": [
+            "project/slides/next.html",
+            "project/slides/next-2.html"
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "id": "cover",
+          "title": "Q3 business review",
+          "previews": {
+            "t1a": "starters/board/previews/t1a/cover.png",
+            "secondstack": "starters/board/previews/secondstack/cover.png",
+            "lakesentry": "starters/board/previews/lakesentry/cover.png",
+            "antares": "starters/board/previews/antares/cover.png",
+            "swiss": "starters/board/previews/swiss/cover.png"
+          }
+        },
+        {
+          "id": "results",
+          "title": "Results",
+          "previews": {
+            "t1a": "starters/board/previews/t1a/results.png",
+            "secondstack": "starters/board/previews/secondstack/results.png",
+            "lakesentry": "starters/board/previews/lakesentry/results.png",
+            "antares": "starters/board/previews/antares/results.png",
+            "swiss": "starters/board/previews/swiss/results.png"
+          }
+        },
+        {
+          "id": "customers",
+          "title": "Customers",
+          "previews": {
+            "t1a": "starters/board/previews/t1a/customers.png",
+            "secondstack": "starters/board/previews/secondstack/customers.png",
+            "lakesentry": "starters/board/previews/lakesentry/customers.png",
+            "antares": "starters/board/previews/antares/customers.png",
+            "swiss": "starters/board/previews/swiss/customers.png"
+          }
+        },
+        {
+          "id": "risks",
+          "title": "Risks",
+          "previews": {
+            "t1a": "starters/board/previews/t1a/risks.png",
+            "secondstack": "starters/board/previews/secondstack/risks.png",
+            "lakesentry": "starters/board/previews/lakesentry/risks.png",
+            "antares": "starters/board/previews/antares/risks.png",
+            "swiss": "starters/board/previews/swiss/risks.png"
+          }
+        },
+        {
+          "id": "next",
+          "title": "Next quarter",
+          "previews": {
+            "t1a": "starters/board/previews/t1a/next.png",
+            "secondstack": "starters/board/previews/secondstack/next.png",
+            "lakesentry": "starters/board/previews/lakesentry/next.png",
+            "antares": "starters/board/previews/antares/next.png",
+            "swiss": "starters/board/previews/swiss/next.png"
+          }
+        },
+        {
+          "id": "closing",
+          "title": "Questions",
+          "previews": {
+            "t1a": "starters/board/previews/t1a/closing.png",
+            "secondstack": "starters/board/previews/secondstack/closing.png",
+            "lakesentry": "starters/board/previews/lakesentry/closing.png",
+            "antares": "starters/board/previews/antares/closing.png",
+            "swiss": "starters/board/previews/swiss/closing.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pitch",
+      "title": "Sales pitch",
+      "description": "Problem, product, proof and the next step",
+      "hint": "For example: our platform for a bank’s data team. Add their RFP.",
+      "coverTitle": "One platform for every AI team",
+      "coverLabel": "For Northwind Bank",
+      "directory": "starters/pitch",
+      "showcase": 2,
+      "blocks": [
+        {
+          "id": "problem",
+          "title": "Problem",
+          "note": "The pain in the customer’s words",
+          "level": 1,
+          "samples": [
+            "project/slides/problem.html"
+          ]
+        },
+        {
+          "id": "product",
+          "title": "What we do",
+          "note": "The product in three parts",
+          "level": 2,
+          "samples": [
+            "project/slides/product.html",
+            "project/slides/product-2.html"
+          ]
+        },
+        {
+          "id": "proof",
+          "title": "Proof",
+          "note": "A customer like them, with numbers",
+          "level": 2,
+          "samples": [
+            "project/slides/proof.html",
+            "project/slides/proof-2.html"
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "Pricing",
+          "note": "Plans that fit their size",
+          "level": 1,
+          "samples": [
+            "project/slides/pricing.html"
+          ]
+        },
+        {
+          "id": "next-step",
+          "title": "Next step",
+          "note": "One clear ask",
+          "level": 1,
+          "samples": [
+            "project/slides/next-step.html"
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "id": "cover",
+          "title": "One platform for every AI team",
+          "previews": {
+            "t1a": "starters/pitch/previews/t1a/cover.png",
+            "secondstack": "starters/pitch/previews/secondstack/cover.png",
+            "lakesentry": "starters/pitch/previews/lakesentry/cover.png",
+            "antares": "starters/pitch/previews/antares/cover.png",
+            "swiss": "starters/pitch/previews/swiss/cover.png"
+          }
+        },
+        {
+          "id": "problem",
+          "title": "Problem",
+          "previews": {
+            "t1a": "starters/pitch/previews/t1a/problem.png",
+            "secondstack": "starters/pitch/previews/secondstack/problem.png",
+            "lakesentry": "starters/pitch/previews/lakesentry/problem.png",
+            "antares": "starters/pitch/previews/antares/problem.png",
+            "swiss": "starters/pitch/previews/swiss/problem.png"
+          }
+        },
+        {
+          "id": "product",
+          "title": "What we do",
+          "previews": {
+            "t1a": "starters/pitch/previews/t1a/product.png",
+            "secondstack": "starters/pitch/previews/secondstack/product.png",
+            "lakesentry": "starters/pitch/previews/lakesentry/product.png",
+            "antares": "starters/pitch/previews/antares/product.png",
+            "swiss": "starters/pitch/previews/swiss/product.png"
+          }
+        },
+        {
+          "id": "proof",
+          "title": "Proof",
+          "previews": {
+            "t1a": "starters/pitch/previews/t1a/proof.png",
+            "secondstack": "starters/pitch/previews/secondstack/proof.png",
+            "lakesentry": "starters/pitch/previews/lakesentry/proof.png",
+            "antares": "starters/pitch/previews/antares/proof.png",
+            "swiss": "starters/pitch/previews/swiss/proof.png"
+          }
+        },
+        {
+          "id": "pricing",
+          "title": "Pricing",
+          "previews": {
+            "t1a": "starters/pitch/previews/t1a/pricing.png",
+            "secondstack": "starters/pitch/previews/secondstack/pricing.png",
+            "lakesentry": "starters/pitch/previews/lakesentry/pricing.png",
+            "antares": "starters/pitch/previews/antares/pricing.png",
+            "swiss": "starters/pitch/previews/swiss/pricing.png"
+          }
+        },
+        {
+          "id": "next-step",
+          "title": "Next step",
+          "previews": {
+            "t1a": "starters/pitch/previews/t1a/next-step.png",
+            "secondstack": "starters/pitch/previews/secondstack/next-step.png",
+            "lakesentry": "starters/pitch/previews/lakesentry/next-step.png",
+            "antares": "starters/pitch/previews/antares/next-step.png",
+            "swiss": "starters/pitch/previews/swiss/next-step.png"
+          }
+        },
+        {
+          "id": "closing",
+          "title": "Questions",
+          "previews": {
+            "t1a": "starters/pitch/previews/t1a/closing.png",
+            "secondstack": "starters/pitch/previews/secondstack/closing.png",
+            "lakesentry": "starters/pitch/previews/lakesentry/closing.png",
+            "antares": "starters/pitch/previews/antares/closing.png",
+            "swiss": "starters/pitch/previews/swiss/closing.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "case",
+      "title": "Customer case",
+      "description": "Client, challenge, solution and results",
+      "hint": "For example: how we moved Contoso to the new platform. Attach the project report.",
+      "coverTitle": "Contoso Insurance",
+      "coverLabel": "Customer case",
+      "directory": "starters/case",
+      "showcase": 4,
+      "blocks": [
+        {
+          "id": "client",
+          "title": "The client",
+          "note": "Who they are, in numbers",
+          "level": 1,
+          "samples": [
+            "project/slides/client.html"
+          ]
+        },
+        {
+          "id": "challenge",
+          "title": "Challenge",
+          "note": "What was not working",
+          "level": 1,
+          "samples": [
+            "project/slides/challenge.html"
+          ]
+        },
+        {
+          "id": "solution",
+          "title": "Solution",
+          "note": "What we did, step by step",
+          "level": 1,
+          "samples": [
+            "project/slides/solution.html"
+          ]
+        },
+        {
+          "id": "results",
+          "title": "Results",
+          "note": "Before and after",
+          "level": 2,
+          "samples": [
+            "project/slides/results.html",
+            "project/slides/results-2.html"
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "id": "cover",
+          "title": "Contoso Insurance",
+          "previews": {
+            "t1a": "starters/case/previews/t1a/cover.png",
+            "secondstack": "starters/case/previews/secondstack/cover.png",
+            "lakesentry": "starters/case/previews/lakesentry/cover.png",
+            "antares": "starters/case/previews/antares/cover.png",
+            "swiss": "starters/case/previews/swiss/cover.png"
+          }
+        },
+        {
+          "id": "client",
+          "title": "The client",
+          "previews": {
+            "t1a": "starters/case/previews/t1a/client.png",
+            "secondstack": "starters/case/previews/secondstack/client.png",
+            "lakesentry": "starters/case/previews/lakesentry/client.png",
+            "antares": "starters/case/previews/antares/client.png",
+            "swiss": "starters/case/previews/swiss/client.png"
+          }
+        },
+        {
+          "id": "challenge",
+          "title": "Challenge",
+          "previews": {
+            "t1a": "starters/case/previews/t1a/challenge.png",
+            "secondstack": "starters/case/previews/secondstack/challenge.png",
+            "lakesentry": "starters/case/previews/lakesentry/challenge.png",
+            "antares": "starters/case/previews/antares/challenge.png",
+            "swiss": "starters/case/previews/swiss/challenge.png"
+          }
+        },
+        {
+          "id": "solution",
+          "title": "Solution",
+          "previews": {
+            "t1a": "starters/case/previews/t1a/solution.png",
+            "secondstack": "starters/case/previews/secondstack/solution.png",
+            "lakesentry": "starters/case/previews/lakesentry/solution.png",
+            "antares": "starters/case/previews/antares/solution.png",
+            "swiss": "starters/case/previews/swiss/solution.png"
+          }
+        },
+        {
+          "id": "results",
+          "title": "Results",
+          "previews": {
+            "t1a": "starters/case/previews/t1a/results.png",
+            "secondstack": "starters/case/previews/secondstack/results.png",
+            "lakesentry": "starters/case/previews/lakesentry/results.png",
+            "antares": "starters/case/previews/antares/results.png",
+            "swiss": "starters/case/previews/swiss/results.png"
+          }
+        },
+        {
+          "id": "closing",
+          "title": "Questions",
+          "previews": {
+            "t1a": "starters/case/previews/t1a/closing.png",
+            "secondstack": "starters/case/previews/secondstack/closing.png",
+            "lakesentry": "starters/case/previews/lakesentry/closing.png",
+            "antares": "starters/case/previews/antares/closing.png",
+            "swiss": "starters/case/previews/swiss/closing.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "migration",
+      "title": "Migration plan",
+      "description": "Scope, approach, timeline and risks",
+      "hint": "For example: moving 340 BI reports to the new platform. Attach the inventory.",
+      "coverTitle": "Move BI in weeks, not quarters",
+      "coverLabel": "Migration",
+      "directory": "starters/migration",
+      "showcase": 3,
+      "blocks": [
+        {
+          "id": "scope",
+          "title": "Scope",
+          "note": "What moves and what stays",
+          "level": 1,
+          "samples": [
+            "project/slides/scope.html"
+          ]
+        },
+        {
+          "id": "approach",
+          "title": "Approach",
+          "note": "How the work is done",
+          "level": 1,
+          "samples": [
+            "project/slides/approach.html"
+          ]
+        },
+        {
+          "id": "timeline",
+          "title": "Timeline",
+          "note": "Phases and milestones",
+          "level": 1,
+          "samples": [
+            "project/slides/timeline.html"
+          ]
+        },
+        {
+          "id": "risks",
+          "title": "Risks",
+          "note": "What could slow us down",
+          "level": 1,
+          "samples": [
+            "project/slides/risks.html"
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "id": "cover",
+          "title": "Move BI in weeks, not quarters",
+          "previews": {
+            "t1a": "starters/migration/previews/t1a/cover.png",
+            "secondstack": "starters/migration/previews/secondstack/cover.png",
+            "lakesentry": "starters/migration/previews/lakesentry/cover.png",
+            "antares": "starters/migration/previews/antares/cover.png",
+            "swiss": "starters/migration/previews/swiss/cover.png"
+          }
+        },
+        {
+          "id": "scope",
+          "title": "Scope",
+          "previews": {
+            "t1a": "starters/migration/previews/t1a/scope.png",
+            "secondstack": "starters/migration/previews/secondstack/scope.png",
+            "lakesentry": "starters/migration/previews/lakesentry/scope.png",
+            "antares": "starters/migration/previews/antares/scope.png",
+            "swiss": "starters/migration/previews/swiss/scope.png"
+          }
+        },
+        {
+          "id": "approach",
+          "title": "Approach",
+          "previews": {
+            "t1a": "starters/migration/previews/t1a/approach.png",
+            "secondstack": "starters/migration/previews/secondstack/approach.png",
+            "lakesentry": "starters/migration/previews/lakesentry/approach.png",
+            "antares": "starters/migration/previews/antares/approach.png",
+            "swiss": "starters/migration/previews/swiss/approach.png"
+          }
+        },
+        {
+          "id": "timeline",
+          "title": "Timeline",
+          "previews": {
+            "t1a": "starters/migration/previews/t1a/timeline.png",
+            "secondstack": "starters/migration/previews/secondstack/timeline.png",
+            "lakesentry": "starters/migration/previews/lakesentry/timeline.png",
+            "antares": "starters/migration/previews/antares/timeline.png",
+            "swiss": "starters/migration/previews/swiss/timeline.png"
+          }
+        },
+        {
+          "id": "risks",
+          "title": "Risks",
+          "previews": {
+            "t1a": "starters/migration/previews/t1a/risks.png",
+            "secondstack": "starters/migration/previews/secondstack/risks.png",
+            "lakesentry": "starters/migration/previews/lakesentry/risks.png",
+            "antares": "starters/migration/previews/antares/risks.png",
+            "swiss": "starters/migration/previews/swiss/risks.png"
+          }
+        },
+        {
+          "id": "closing",
+          "title": "Questions",
+          "previews": {
+            "t1a": "starters/migration/previews/t1a/closing.png",
+            "secondstack": "starters/migration/previews/secondstack/closing.png",
+            "lakesentry": "starters/migration/previews/lakesentry/closing.png",
+            "antares": "starters/migration/previews/antares/closing.png",
+            "swiss": "starters/migration/previews/swiss/closing.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kickoff",
+      "title": "Project kickoff",
+      "description": "Goals, scope, team and ways of working",
+      "hint": "For example: kickoff of the data platform project with the client team.",
+      "coverTitle": "Data platform, phase 1",
+      "coverLabel": "Kickoff",
+      "directory": "starters/kickoff",
+      "showcase": 3,
+      "blocks": [
+        {
+          "id": "goals",
+          "title": "Goals",
+          "note": "What success looks like",
+          "level": 1,
+          "samples": [
+            "project/slides/goals.html"
+          ]
+        },
+        {
+          "id": "scope",
+          "title": "Scope",
+          "note": "In and out",
+          "level": 1,
+          "samples": [
+            "project/slides/scope.html"
+          ]
+        },
+        {
+          "id": "team",
+          "title": "Team and roles",
+          "note": "Who does what",
+          "level": 1,
+          "samples": [
+            "project/slides/team.html"
+          ]
+        },
+        {
+          "id": "ways",
+          "title": "Ways of working",
+          "note": "Meetings, tools and decisions",
+          "level": 1,
+          "samples": [
+            "project/slides/ways.html"
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "id": "cover",
+          "title": "Data platform, phase 1",
+          "previews": {
+            "t1a": "starters/kickoff/previews/t1a/cover.png",
+            "secondstack": "starters/kickoff/previews/secondstack/cover.png",
+            "lakesentry": "starters/kickoff/previews/lakesentry/cover.png",
+            "antares": "starters/kickoff/previews/antares/cover.png",
+            "swiss": "starters/kickoff/previews/swiss/cover.png"
+          }
+        },
+        {
+          "id": "goals",
+          "title": "Goals",
+          "previews": {
+            "t1a": "starters/kickoff/previews/t1a/goals.png",
+            "secondstack": "starters/kickoff/previews/secondstack/goals.png",
+            "lakesentry": "starters/kickoff/previews/lakesentry/goals.png",
+            "antares": "starters/kickoff/previews/antares/goals.png",
+            "swiss": "starters/kickoff/previews/swiss/goals.png"
+          }
+        },
+        {
+          "id": "scope",
+          "title": "Scope",
+          "previews": {
+            "t1a": "starters/kickoff/previews/t1a/scope.png",
+            "secondstack": "starters/kickoff/previews/secondstack/scope.png",
+            "lakesentry": "starters/kickoff/previews/lakesentry/scope.png",
+            "antares": "starters/kickoff/previews/antares/scope.png",
+            "swiss": "starters/kickoff/previews/swiss/scope.png"
+          }
+        },
+        {
+          "id": "team",
+          "title": "Team and roles",
+          "previews": {
+            "t1a": "starters/kickoff/previews/t1a/team.png",
+            "secondstack": "starters/kickoff/previews/secondstack/team.png",
+            "lakesentry": "starters/kickoff/previews/lakesentry/team.png",
+            "antares": "starters/kickoff/previews/antares/team.png",
+            "swiss": "starters/kickoff/previews/swiss/team.png"
+          }
+        },
+        {
+          "id": "ways",
+          "title": "Ways of working",
+          "previews": {
+            "t1a": "starters/kickoff/previews/t1a/ways.png",
+            "secondstack": "starters/kickoff/previews/secondstack/ways.png",
+            "lakesentry": "starters/kickoff/previews/lakesentry/ways.png",
+            "antares": "starters/kickoff/previews/antares/ways.png",
+            "swiss": "starters/kickoff/previews/swiss/ways.png"
+          }
+        },
+        {
+          "id": "closing",
+          "title": "Questions",
+          "previews": {
+            "t1a": "starters/kickoff/previews/t1a/closing.png",
+            "secondstack": "starters/kickoff/previews/secondstack/closing.png",
+            "lakesentry": "starters/kickoff/previews/lakesentry/closing.png",
+            "antares": "starters/kickoff/previews/antares/closing.png",
+            "swiss": "starters/kickoff/previews/swiss/closing.png"
+          }
+        }
+      ]
+    },
+    {
+      "id": "onboarding",
+      "title": "Team onboarding",
+      "description": "Welcome, first weeks, tools and people",
+      "hint": "For example: onboarding for new engineers. Add the handbook.",
+      "coverTitle": "Your first two weeks",
+      "coverLabel": "Welcome",
+      "directory": "starters/onboarding",
+      "showcase": 2,
+      "blocks": [
+        {
+          "id": "welcome",
+          "title": "Who we are",
+          "note": "The team and what it owns",
+          "level": 1,
+          "samples": [
+            "project/slides/welcome.html"
+          ]
+        },
+        {
+          "id": "first-weeks",
+          "title": "First two weeks",
+          "note": "What you do, day by day",
+          "level": 1,
+          "samples": [
+            "project/slides/first-weeks.html"
+          ]
+        },
+        {
+          "id": "tools",
+          "title": "Tools",
+          "note": "Where things live",
+          "level": 1,
+          "samples": [
+            "project/slides/tools.html"
+          ]
+        },
+        {
+          "id": "people",
+          "title": "Who to ask",
+          "note": "Names for each kind of question",
+          "level": 1,
+          "samples": [
+            "project/slides/people.html"
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "id": "cover",
+          "title": "Your first two weeks",
+          "previews": {
+            "t1a": "starters/onboarding/previews/t1a/cover.png",
+            "secondstack": "starters/onboarding/previews/secondstack/cover.png",
+            "lakesentry": "starters/onboarding/previews/lakesentry/cover.png",
+            "antares": "starters/onboarding/previews/antares/cover.png",
+            "swiss": "starters/onboarding/previews/swiss/cover.png"
+          }
+        },
+        {
+          "id": "welcome",
+          "title": "Who we are",
+          "previews": {
+            "t1a": "starters/onboarding/previews/t1a/welcome.png",
+            "secondstack": "starters/onboarding/previews/secondstack/welcome.png",
+            "lakesentry": "starters/onboarding/previews/lakesentry/welcome.png",
+            "antares": "starters/onboarding/previews/antares/welcome.png",
+            "swiss": "starters/onboarding/previews/swiss/welcome.png"
+          }
+        },
+        {
+          "id": "first-weeks",
+          "title": "First two weeks",
+          "previews": {
+            "t1a": "starters/onboarding/previews/t1a/first-weeks.png",
+            "secondstack": "starters/onboarding/previews/secondstack/first-weeks.png",
+            "lakesentry": "starters/onboarding/previews/lakesentry/first-weeks.png",
+            "antares": "starters/onboarding/previews/antares/first-weeks.png",
+            "swiss": "starters/onboarding/previews/swiss/first-weeks.png"
+          }
+        },
+        {
+          "id": "tools",
+          "title": "Tools",
+          "previews": {
+            "t1a": "starters/onboarding/previews/t1a/tools.png",
+            "secondstack": "starters/onboarding/previews/secondstack/tools.png",
+            "lakesentry": "starters/onboarding/previews/lakesentry/tools.png",
+            "antares": "starters/onboarding/previews/antares/tools.png",
+            "swiss": "starters/onboarding/previews/swiss/tools.png"
+          }
+        },
+        {
+          "id": "people",
+          "title": "Who to ask",
+          "previews": {
+            "t1a": "starters/onboarding/previews/t1a/people.png",
+            "secondstack": "starters/onboarding/previews/secondstack/people.png",
+            "lakesentry": "starters/onboarding/previews/lakesentry/people.png",
+            "antares": "starters/onboarding/previews/antares/people.png",
+            "swiss": "starters/onboarding/previews/swiss/people.png"
+          }
+        },
+        {
+          "id": "closing",
+          "title": "Questions",
+          "previews": {
+            "t1a": "starters/onboarding/previews/t1a/closing.png",
+            "secondstack": "starters/onboarding/previews/secondstack/closing.png",
+            "lakesentry": "starters/onboarding/previews/lakesentry/closing.png",
+            "antares": "starters/onboarding/previews/antares/closing.png",
+            "swiss": "starters/onboarding/previews/swiss/closing.png"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "v": 1,
+  "title": "lakesentry.io",
+  "lang": "en",
+  "order": [
+    "cover",
+    "problem",
+    "solution",
+    "impact",
+    "how",
+    "teams",
+    "pricing",
+    "start"
+  ],
+  "theme": {
+    "preset": "lakesentry"
+  }
+}
