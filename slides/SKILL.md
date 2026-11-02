@@ -195,6 +195,12 @@ The type's themes are in `_type/slides.json` of its viewer files. Each has an `i
 - Slides show conclusions and 1-3 key numbers. Draw charts as inline SVG from the analysis and check them against the source numbers.
 - Report contradictions in the data to the user in chat; do not smooth them over on a slide.
 
+## Design rules
+
+Rules from design reviews of generated decks. Check every slide against them before you publish.
+
+1. A chart explains every color it uses. When a chart has more than one series or a highlighted part (for example an optional add-on in `var(--accent)`), add a `ul.legend` that names each color, or label the part directly on the chart. A reader must not have to guess what a color means.
+
 ## Build a deck
 
 The package also holds `templates/<theme>/project/`: the designer's original reference decks for all five themes. The t1a library includes 28 corporate slides with panel, timeline, journey, team, comparison and product layouts. Read its `deck.json` and the relevant slide files before adapting those layouts. Publish only the slides needed by the confirmed plan.
