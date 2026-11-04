@@ -205,7 +205,7 @@ Rules from design reviews of generated decks. Check every slide against them bef
 4. Keep the template's type sizes. Text in the same role (slide titles, card titles, stats) has the same size on every slide; do not enlarge a title to fill space or shrink it to fit more text: shorten the text instead.
 5. In a dark slide or a dark deck, no white or light block stays: cards, tables, panels, screens and drawings use `var(--surface)`, `var(--background)` and `var(--border)`, so they follow the scheme.
 6. Use only real brand assets: the marks the theme draws (`span.logo`, the t1a.com globe of `div.onepager`) and the logos the user gives. Never draw an imitation of a logo, a globe or a map, and never add a placeholder picture.
-7. Fill the frame. A slide with a lot of empty space needs a larger block, a second column or less splitting; text a room cannot read from the back is too small. For a workshop or a talk, prefer fewer words in larger type.
+7. Size type for the room. Text a room cannot read from the back is too small; for a workshop or a talk, prefer fewer words in larger type. White space is part of the design: do not stretch blocks or add content only to fill the frame.
 8. Vary the layouts. Do not use the same block (for example `ol.steps`) on two slides in a row, and use each block for what it is for: steps only for a real sequence.
 9. Builds are the exception. Add `data-step` only to a deck the user says will be presented live, and then only to the one or two slides where the speaker walks through parts; never to every slide.
 10. In a product deck, show what the user gets, and put the product's real interface on the slides (a screenshot from the user or a drawn screen in `div.window` or `div.laptop`), not only words about it.
