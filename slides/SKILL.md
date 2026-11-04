@@ -199,7 +199,7 @@ The type's themes are in `_type/slides.json` of its viewer files. Each has an `i
 
 Rules from design reviews of generated decks. Check every slide against them before you publish.
 
-1. A chart explains every color it uses. When a chart has more than one series or a highlighted part (for example an optional add-on in `var(--accent)`), add a `ul.legend` that names each color, or label the part directly on the chart. A reader must not have to guess what a color means.
+1. A chart explains every color it uses. When a chart has more than one series or a highlighted part (for example an optional add-on in `var(--accent)`), add a `ul.legend` that names each color, or label the part directly on the chart. A single highlighted bar needs this too: name what the accent means ("This sprint", "Forecast"); a bold axis label does not explain a color. A reader must not have to guess what a color means.
 2. Draw a chart the way the template's `table-chart` slide does: an `h4` above it that names the measure and its unit, series labels and gridlines in `var(--muted)` and `var(--border)`, values written at the bars, and `role="img"` with an `aria-label` that says what the chart shows.
 3. Copy a template layout with its proportions and its placement: the same cells, the same order, the same alignment. Do not stretch, squeeze or move its parts (for example, the partner case keeps the title and the tags in the top cell and the text in the bottom cell).
 4. Keep the template's type sizes. Text in the same role (slide titles, card titles, stats) has the same size on every slide; do not enlarge a title to fill space or shrink it to fit more text: shorten the text instead.
@@ -208,7 +208,7 @@ Rules from design reviews of generated decks. Check every slide against them bef
 7. Size type for the room. Text a room cannot read from the back is too small; for a workshop or a talk, prefer fewer words in larger type. White space is part of the design: do not stretch blocks or add content only to fill the frame.
 8. Vary the layouts. Do not use the same block (for example `ol.steps`) on two slides in a row, and use each block for what it is for: steps only for a real sequence.
 9. Builds are the exception. Add `data-step` only to a deck the user says will be presented live, and then only to the one or two slides where the speaker walks through parts; never to every slide.
-10. In a product deck, show what the user gets, and put the product's real interface on the slides (a screenshot from the user or a drawn screen in `div.window` or `div.laptop`), not only words about it.
+10. In a product deck, show what the user gets, and put the product's real interface on the slides, not only words about it. Ask the user for screenshots and use them in `div.window` or `div.laptop`. Without a screenshot, a drawn screen shows only the one part the slide is about, enlarged so its text is as large as the slide's body text; never draw a miniature of a whole app. If that part cannot be drawn readably, leave the screen out.
 11. Draw arrows and connectors tidy: one stroke width, aligned to the shapes they join, under the shapes, with the tip touching the next shape.
 
 ## Build a deck
