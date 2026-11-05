@@ -1,4 +1,4 @@
-# Slides 1.6.6
+# Slides 1.6.7
 
 A Slides site is a presentation. The viewer is part of the site type: it shows each slide in a 16:9 frame, with keyboard and touch navigation, an overview, a presenter window with notes and a timer, fullscreen, light and dark themes and print to PDF. You write only the deck data: one JSON file and one HTML fragment per slide. Do not write `index.html`, CSS files or JavaScript.
 
@@ -195,11 +195,29 @@ The type's themes are in `_type/slides.json` of its viewer files. Each has an `i
 - Slides show conclusions and 1-3 key numbers. Draw charts as inline SVG from the analysis and check them against the source numbers.
 - Report contradictions in the data to the user in chat; do not smooth them over on a slide.
 
+## Design rules
+
+Rules from design reviews of generated decks. Check every slide against them before you publish.
+
+1. A chart explains every color it uses. When a chart has more than one series or a highlighted part (for example an optional add-on in `var(--accent)`), add a `ul.legend` that names each color, or label the part directly on the chart. A single highlighted bar needs this too: name what the accent means ("This sprint", "Forecast"); a bold axis label does not explain a color. A reader must not have to guess what a color means. Put a chart's legend next to the chart, on the line of its `h4` or right under the plot, not at the top right of the slide beside the title.
+2. Draw a chart the way the template's `table-chart` slide does: an `h4` above it that names the measure and its unit, series labels and gridlines in `var(--muted)` and `var(--border)`, values written at the bars, and `role="img"` with an `aria-label` that says what the chart shows.
+3. Copy a template layout with its proportions and its placement: the same cells, the same order, the same alignment. Do not stretch, squeeze or move its parts (for example, the partner case keeps the title and the tags in the top cell and the text in the bottom cell).
+4. Keep the template's type sizes. Text in the same role (slide titles, card titles, stats) has the same size on every slide; do not enlarge a title to fill space or shrink it to fit more text: shorten the text instead.
+5. In a dark slide or a dark deck, no white or light block stays: cards, tables, panels, screens and drawings use `var(--surface)`, `var(--background)` and `var(--border)`, so they follow the scheme.
+6. Use only real brand assets: the marks the theme draws (`span.logo`, the t1a.com globe of `div.onepager`) and the logos the user gives. Never draw an imitation of a logo, a globe or a map, and never add a placeholder picture.
+7. Size type for the room. Text a room cannot read from the back is too small; for a workshop or a talk, prefer fewer words in larger type. White space is part of the design: do not stretch blocks or add content only to fill the frame.
+8. Vary the layouts. Do not use the same block (for example `ol.steps`) on two slides in a row, and use each block for what it is for: steps only for a real sequence.
+9. Builds are the exception. Add `data-step` only to a deck the user says will be presented live, and then only to the one or two slides where the speaker walks through parts; never to every slide.
+10. In a product deck, show what the user gets, and put the product's real interface on the slides, not only words about it. Ask the user for screenshots and use them in `div.window` or `div.laptop`. Without a screenshot, a drawn screen shows only the one part the slide is about, enlarged so its text is as large as the slide's body text; never draw a miniature of a whole app. If that part cannot be drawn readably, leave the screen out.
+11. Draw arrows and connectors tidy: one stroke width, aligned to the shapes they join, under the shapes, with the tip touching the next shape.
+12. Add a `p.callout` only for a point the slide does not already show. A callout that repeats the cards, the chart or the title is noise: put the point into the title or the blocks instead, or leave it out.
+13. Every slide must give the audience a conclusion, not only a fact that a feature exists. A slide about a product screen says in its title what the user gains or what changed for them, and the screen shows that moment. If a slide has no conclusion of its own, merge it into a neighbouring slide or cut it.
+
 ## Build a deck
 
 The package also holds `templates/<theme>/project/`: the designer's original reference decks for all five themes. The t1a library includes 28 corporate slides with panel, timeline, journey, team, comparison and product layouts. Read its `deck.json` and the relevant slide files before adapting those layouts. Publish only the slides needed by the confirmed plan.
 
-1. Call `site_types` with `name="t1a-slides"`. Use the exact `type` it reports, for example `t1a-slides@1.6.6`, in every call below.
+1. Call `site_types` with `name="t1a-slides"`. Use the exact `type` it reports, for example `t1a-slides@1.6.7`, in every call below.
 2. Call `import_site` with that `type` and a new directory, for example `/workspace/sites/<name>-preview/`, read `_type/slides.json` there and choose the theme (Themes).
 3. Plan the deck: the story, the sections and the slide ids, one idea per slide. Start with a `title` slide and end with a closing slide.
 4. Write `project/deck.json` with the complete `order` first, then the slide files one by one. The viewer shows a placeholder for each listed slide whose file does not exist yet and fills it when the file appears, so you can publish early and keep writing.
@@ -209,7 +227,7 @@ The package also holds `templates/<theme>/project/`: the designer's original ref
 
 The workspace cannot open the published site. Check the deck locally with the viewer package:
 
-1. Use the directory from Build step 2, or call `import_site` with `type="t1a-slides@1.6.6"` and a new directory, for example `/workspace/sites/<name>-preview/`. It contains `index.html` and `_type/`.
+1. Use the directory from Build step 2, or call `import_site` with `type="t1a-slides@1.6.7"` and a new directory, for example `/workspace/sites/<name>-preview/`. It contains `index.html` and `_type/`.
 2. Copy the deck data into it, replacing any earlier copy, so deleted files do not linger: `rm -rf /workspace/sites/<name>-preview/project && cp -r /workspace/sites/<name>/project /workspace/sites/<name>-preview/`. Repeat after each change. Never publish the preview directory.
 3. Serve it: `python3 -m http.server 8765 --bind 127.0.0.1 --directory /workspace/sites/<name>-preview` in the background.
 4. Open `http://127.0.0.1:8765/?check=1` in the workspace browser. Check mode lists every slide with its issues and outlines overflowing elements. When `document.documentElement.dataset.slidesCheck` is `"done"`, the full report is the JSON text of `#slides-check-report` and the `[slides-check]` console line. `ok` is `false` while any error remains. While slides are still missing, the browser console also shows 404 errors for their files; that is expected.
@@ -217,7 +235,7 @@ The workspace cannot open the published site. Check the deck locally with the vi
 
 ## Publish
 
-- Publish the data directory, `/workspace/sites/<name>/`, which holds `project/` and optionally `_spot.json`, with `publish_site(path=..., site=<name>, type="t1a-slides@1.6.6")`. It needs no `index.html`; never include the preview files. Leave `type_target` empty.
+- Publish the data directory, `/workspace/sites/<name>/`, which holds `project/` and optionally `_spot.json`, with `publish_site(path=..., site=<name>, type="t1a-slides@1.6.7")`. It needs no `index.html`; never include the preview files. Leave `type_target` empty.
 - Only files under `project/` and `_spot.json` belong in it. Publishing refuses other files and names the first offending path; every `.json` file must be valid JSON.
 - An edit of an existing deck starts with `import_site(site=<name>, path=<empty directory>)`, which reports the exact type to publish with. The owner can also change slide text by hand, and those edits are saved into the slide files, so never edit from an older copy. Edit, check and publish with that `type`. A pin mismatch error (409) means the site now pins another version: import it again and redo the edit there.
 - Give the user the link with one sentence on what the deck covers. The presenter view opens with `S`, the overview with `O`, fullscreen with `F`; browser print saves a PDF with one page per slide, and the toolbar's download button a PowerPoint file.
