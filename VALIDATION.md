@@ -1,6 +1,8 @@
 # Validation
 
-Package: `t1a-slides@1.6.7`, built 2026-11-05.
+Package: `t1a-slides@1.6.8`, built 2026-11-05.
+
+1.6.8: slide frames reset the text styles a button passes down (`text-align`, letter and word spacing, `text-transform`, `text-indent`, `white-space`). Strip, overview and other thumbnails sit inside buttons and inherited centred text, so their layout differed from the stage. Checked locally on the t1a preset deck: strip frames now compute `text-align: start`, like the stage.
 
 1.6.7 changes only the agent guidance in `slides/SKILL.md` (design rules from deck reviews) and the version string. The viewer (apart from its version constant), themes and starters are unchanged from 1.6.6, so the 1.6.6 results below still apply.
 

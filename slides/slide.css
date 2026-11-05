@@ -25,6 +25,13 @@
   font-family: var(--font-body);
   font-size: 36px;
   line-height: 1.4;
+  /* A thumbnail sits inside a button; reset what a button passes down. */
+  text-align: start;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0;
+  white-space: normal;
   font-optical-sizing: auto;
   font-kerning: normal;
   -webkit-font-smoothing: antialiased;
