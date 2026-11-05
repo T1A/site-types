@@ -1,6 +1,10 @@
 # Validation
 
-Package: `t1a-slides@1.6.6`, built 2026-11-01.
+Package: `t1a-slides@1.6.7`, built 2026-11-05.
+
+1.6.7 changes only the agent guidance in `slides/SKILL.md` (design rules from deck reviews) and the version string. The viewer (apart from its version constant), themes and starters are unchanged from 1.6.6, so the 1.6.6 results below still apply.
+
+## 1.6.6 results
 
 - Seven-deck viewer check passed: 66 slides, 266 stage/print screenshots, light and dark schemes, keyboard navigation, overview, presenter synchronization, PDF page counts and PowerPoint exports.
 - The embed fixture passed host origin checks, progressive publishing, fullscreen, presenter connections, edit and selection actions, and an explicit assertion that `edited.baseHtml` equals the original slide source.
