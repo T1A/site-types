@@ -681,6 +681,16 @@
 }
 :where(.window > :is(img, svg, iframe, video, div)) { display: block; width: 100%; height: auto; border-radius: 0; }
 
+/* Demo: a product walkthrough slide, the text column on the left (eyebrow, h2, short points) and a figure
+   with the screen (div.browser, div.window, div.laptop) and a muted figcaption under it on the right. */
+:where(.demo) { flex: 1 1 auto; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr); gap: 80px; align-items: center; }
+:where(.demo > :first-child) { display: flex; flex-direction: column; gap: 32px; min-width: 0; }
+/* Outranks the presets' h2 sizes, which come later in this file. */
+.demo > :first-child > h2 { margin: 0; font-size: 60px; }
+:where(.demo > :first-child li) { font-size: 28px; line-height: 1.35; }
+:where(.demo > figure) { display: flex; flex-direction: column; gap: 20px; min-width: 0; margin: 0; }
+:where(.demo > figure > figcaption) { font-size: 24px; line-height: 1.35; color: var(--muted); }
+
 /* Browser: the showcase's plain screen, a rounded rectangle without device or window chrome, for a web
    product. Holds one img, svg, iframe or div. */
 :where(.browser) {
