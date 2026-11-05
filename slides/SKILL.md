@@ -86,9 +86,10 @@ A slide file holds exactly one `<section>`. An optional last child `<aside>` hol
   - `div.cases` for similar cases: a first `div` with the `h2` and a `p`, then three `div.case` tiles (`teal`, `purple`, `blue`, `orange` or `gray`), each `ul.tags` (duration first, then volumes), `h3`, `p` and optionally a country map `img`.
   - `div.onepager.case` on a `blank` slide for one case on one page: `div.brand` (`span.logo` and `ul.tags`), `div.hero` with the `h2`, `div.cols` with Problem and Solution lists, `div.partners` and `div.stats` with two stats.
   - `ul.meters` for shares of a whole as progress bars: `<li style="--value: 58">Not opened in 90 days<strong>58%</strong></li>`, up to about five; the pale track is 100%, so there is no axis. `li.highlight` fills the bar with the accent.
-  - `div.gantt` for a plan by months: `ul.legend` of statuses, `div.months` of `span`s (`data-year="2026"` on the first month of a year), and `div.bars` of `p` bars with `style="--from: 2; --span: 3"` (months from the first column, fractions allowed) and a status class `done`, `wip`, `offset`, `blocked` or `planned`; a `p.milestone` with `style="--at: 7.5"` draws a dotted line. Set `style="--months: N"` on the `div.gantt` when it has other than 12 months. Keep it to about 8 bars with two short lines each.
+  - `div.gantt` for a plan by months: `ul.legend` of statuses, `div.months` of `span`s (`data-year="2026"` on the first month of a year), and `div.bars` of `p` bars with `style="--from: 2; --span: 3"` (months from the first column, fractions allowed) and one color class: a status (`done`, `wip`, `offset`, `blocked`, `planned`) when the chart reports progress, or a phase (`phase-1` to `phase-4`) when it is a plan whose bars belong to phases. Do not mix the two kinds in one chart, and never use a status class to mean a phase: `done` on future work says it is finished. The `ul.legend` uses the same classes and names each status or phase; a `p.milestone` with `style="--at: 7.5"` draws a dotted line. Set `style="--months: N"` on the `div.gantt` when it has other than 12 months. Keep it to about 8 bars with two short lines each.
   - In `ol.timeline`, `<small>` before the `strong` labels a point above its date, `li.down` drops one long text to a second level, and `ol.timeline.arrow` ends the line in an arrow.
   - `ul.owners.cards` instead of the plain legend under `ol.journey`: one card per party, `<li><strong>T1A</strong>What it does<a href="https://t1a.com">t1a.com</a></li>` and `li.partner` for the partner, two cards at most.
+  - `span.rag` with `green`, `amber` or `red` for the status of a project or workstream: `<span class="rag amber">Amber</span>` draws a colored dot before the word. Always write the word, so the status reads without color; put it in a table cell or a list item. Use it for status reports, not for comparisons.
   - `ul.legend` at the top right explains marks or statuses: `<li><span class="yes"></span>Fully supported</li>`.
   - `table.compare.detail` compares in words: each cell a `<span class="rating"><b>$$$</b>$$</span>` (`b` holds the filled marks; `rating stars` for ★) or a `<strong>` verdict, then a short line. `table.dense` sets a wide plan table in small type.
   - `div.cols` of `figure`s with an `img` and a `figcaption` each shows pictures side by side with centered captions.
@@ -141,7 +142,8 @@ The `t1a` preset is the T1A corporate template; a t1a deck must look like that t
 | Similar cases | `div.cases`: the title cell and three tiles, `teal`, `purple` and `gray` |
 | Detailed timeline | `ol.timeline.arrow` with `small` labels and at most one `li.down` |
 | Journey with the parties | `ol.journey` with `ul.owners.cards` |
-| Plan with statuses | `div.gantt` |
+| Plan with statuses or phases | `div.gantt` |
+| Status by workstream | `table` with `span.rag` |
 | Two or three key points | `ul.points.badges`, each an icon, an `h3` and a short `p` |
 | Four to six points | `ul.points`: 4 with an `h3` each, or 6 with a short `p` only |
 | List of six | `ol.halves` |

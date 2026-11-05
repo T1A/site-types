@@ -712,6 +712,12 @@
 :where(ul.meters > li)::after { width: calc(var(--value, 0) * 1%); background: var(--foreground); }
 :where(ul.meters > li.highlight)::after { background: var(--accent); }
 
+/* RAG status of a workstream or project: <span class="rag amber">Amber</span>, a colored dot before the word. */
+:where(.rag) { display: inline-flex; align-items: center; gap: 14px; font-weight: 600; white-space: nowrap; }
+:where(.rag)::before { content: ""; flex: none; width: 0.9em; height: 0.9em; border-radius: 50%; background: var(--rag, var(--muted)); }
+:where(.rag.green) { --rag: #1F9D55; }
+:where(.rag.amber) { --rag: #F2A900; }
+:where(.rag.red) { --rag: #E5484D; }
 /* Status marks for comparisons: yes, partly, no. */
 :where(.yes, .part, .no) { display: inline-block; width: 40px; height: 40px; border-radius: 50%; vertical-align: middle; background: center / 64% no-repeat; }
 :where(.yes) { background-color: var(--accent); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E"); }
@@ -951,7 +957,7 @@
 .frame:has(> section > :is(.cases, .roles, ol.halves)) .frame-footer { display: none; }
 
 /* A Gantt chart: month heads on a band, one bar per stage placed with style="--from: 2; --span: 3"
-   (months from the first column), status classes for color, a dotted p.milestone at style="--at: 7.2". */
+   (months from the first column), status or phase classes for color, a dotted p.milestone at style="--at: 7.2". */
 :where(.gantt) { --months: 12; flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
 :where(.gantt > .months) { position: relative; display: grid; grid-template-columns: repeat(var(--months), minmax(0, 1fr)); margin-top: 56px; background: var(--surface); }
 :where(.gantt > .months > span) { position: relative; padding: 6px 0; font-size: 29px; text-align: center; }
@@ -992,6 +998,10 @@
 :where(.gantt .offset) { --status: var(--surface); --status-ink: var(--foreground); }
 :where(.gantt .blocked) { --status: #E5484D; --status-ink: #FFFFFF; }
 :where(.gantt .planned) { --status: var(--border); --status-ink: var(--foreground); }
+:where(.gantt .phase-1) { --status: var(--accent); --status-ink: var(--on-accent); }
+:where(.gantt .phase-2) { --status: var(--foreground); --status-ink: var(--background); }
+:where(.gantt .phase-3) { --status: color-mix(in srgb, var(--accent) 40%, var(--background)); --status-ink: var(--foreground); }
+:where(.gantt .phase-4) { --status: var(--surface); --status-ink: var(--foreground); }
 :where(.gantt > ul.legend) { flex-direction: row; top: 148px; gap: 6px; }
 :where(.gantt > ul.legend > li) { justify-content: center; min-width: 160px; padding: 2px 20px; border-radius: 999px; background: var(--status); color: var(--status-ink); font-size: 21px; }
 
@@ -1234,6 +1244,13 @@
 :where(.frame[data-preset="t1a"] .gantt .offset) { --status: #FFCCA8; --status-ink: #111729; }
 :where(.frame[data-preset="t1a"] .gantt .blocked) { --status: #EF5350; --status-ink: #FCFCFC; }
 :where(.frame[data-preset="t1a"] .gantt .planned) { --status: #BDBDBD; --status-ink: #FCFCFC; }
+:where(.frame[data-preset="t1a"] .gantt .phase-1) { --status: #6A1B9A; --status-ink: #FCFCFC; }
+:where(.frame[data-preset="t1a"] .gantt .phase-2) { --status: #009688; --status-ink: #FCFCFC; }
+:where(.frame[data-preset="t1a"] .gantt .phase-3) { --status: #FF8A3D; --status-ink: #111729; }
+:where(.frame[data-preset="t1a"] .gantt .phase-4) { --status: #80CBC4; --status-ink: #111729; }
+:where(.frame[data-preset="t1a"] .rag.green) { --rag: #009688; }
+:where(.frame[data-preset="t1a"] .rag.amber) { --rag: #FFB300; }
+:where(.frame[data-preset="t1a"] .rag.red) { --rag: #EF5350; }
 :where(.frame[data-preset="t1a"] .gantt > .months) { background: color-mix(in srgb, var(--surface) calc(var(--tone) * 100%), #D9DCE3); }
 :where(.frame[data-preset="t1a"] .gantt > .bars > p.milestone) { border-left-color: color-mix(in srgb, #C792EA calc(var(--tone) * 100%), #6A1B9A); }
 :where(.frame[data-preset="t1a"] ul.owners.cards > li) { background: #111729; color: #FCFCFC; box-shadow: 0 24px 64px color-mix(in srgb, var(--owner) 30%, transparent), 0 0 0 calc(var(--tone) * 2px) #2A3247; --owner: #C792EA; }
