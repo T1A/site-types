@@ -1,6 +1,8 @@
 # Validation
 
-Package: `t1a-slides@1.6.8`, built 2026-11-05.
+Package: `t1a-slides@1.6.9`, built 2026-11-06.
+
+1.6.9 adds blocks and rules in `slide.css` and `SKILL.md`: `div.browser` showcase, `div.demo` screen-recording layout, live HTML screens and `video` in device frames, `ul.meters` progress bars, `span.rag` status marks, Gantt phase classes, white ink on the t1a teal panel, phone caption strips that reach the phone; rules for one-line eyebrows, no builds on joined diagrams, journeys only for two-party projects, recordings first in product slides, and no value axis when every bar has its value. Checked locally by rendering test decks (web product, mobile, demo, SteerCo, assessment, RFP, QBR) on the t1a preset; the viewer is unchanged apart from its version constant.
 
 1.6.8: slide frames reset the text styles a button passes down (`text-align`, letter and word spacing, `text-transform`, `text-indent`, `white-space`). Strip, overview and other thumbnails sit inside buttons and inherited centred text, so their layout differed from the stage. Checked locally on the t1a preset deck: strip frames now compute `text-align: start`, like the stage.
 
