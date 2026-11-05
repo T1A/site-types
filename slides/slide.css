@@ -552,7 +552,8 @@
 :where(.onepager > .hero) { isolation: isolate; }
 
 /* Showcase: a product on a laptop with the key numbers beside it. The left column holds a p.band caption
-   on a dark strip from the slide edge and a div.stats; the right child .laptop frames one img, svg or iframe. */
+   on a dark strip from the slide edge and a div.stats; the right child .laptop or .browser frames one img,
+   svg, iframe or div. */
 :where(.showcase) {
   flex: 1 1 auto;
   min-height: 0;
@@ -611,6 +612,7 @@
   display: block;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   object-fit: cover;
   object-position: top;
   border-radius: 56px 56px 0 0;
@@ -627,6 +629,7 @@
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 10;
+  overflow: hidden;
   object-fit: cover;
   border: 16px solid #0B0D12;
   border-bottom-width: 22px;
@@ -674,7 +677,19 @@
   border-bottom: 1px solid var(--border);
   background: radial-gradient(circle 7px at 28px 50%, #FF5F57 6px, transparent 7px), radial-gradient(circle 7px at 52px 50%, #FEBC2E 6px, transparent 7px), radial-gradient(circle 7px at 76px 50%, #28C840 6px, transparent 7px), var(--background);
 }
-:where(.window > :is(img, svg, iframe, video)) { display: block; width: 100%; height: auto; border-radius: 0; }
+:where(.window > :is(img, svg, iframe, video, div)) { display: block; width: 100%; height: auto; border-radius: 0; }
+
+/* Browser: the showcase's plain screen, a rounded rectangle without device or window chrome, for a web
+   product. Holds one img, svg, iframe or div. */
+:where(.browser) {
+  min-width: 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border-radius: calc(28px * var(--radius-scale));
+  background: var(--background);
+  box-shadow: 0 0 0 1px var(--border), 0 30px 80px rgb(16 23 41 / 0.14);
+}
+:where(.browser > :first-child) { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 0; }
 
 /* Status marks for comparisons: yes, partly, no. */
 :where(.yes, .part, .no) { display: inline-block; width: 40px; height: 40px; border-radius: 50%; vertical-align: middle; background: center / 64% no-repeat; }
