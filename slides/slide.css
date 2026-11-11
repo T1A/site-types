@@ -711,13 +711,15 @@
 :where(ul.meters > li)::before, :where(ul.meters > li)::after { content: ""; position: absolute; inset: auto auto 0 0; width: 100%; height: 16px; margin: 0; border: 0; border-radius: 999px; background: color-mix(in srgb, var(--foreground) 10%, transparent); }
 :where(ul.meters > li)::after { width: calc(var(--value, 0) * 1%); background: var(--foreground); }
 :where(ul.meters > li.highlight)::after { background: var(--accent); }
+:where(ul.meters > li.good)::after { background: var(--good); }
+:where(ul.meters > li.bad)::after { background: var(--bad); }
 
-/* --bad marks a missed target or a bad value in charts and status marks. */
-:where(.frame) { --bad: #E5484D; }
+/* --good and --bad mark good and bad values in charts and status marks. */
+:where(.frame) { --good: #1F9D55; --bad: #E5484D; }
 /* RAG status of a workstream or project: <span class="rag amber">Amber</span>, a colored dot before the word. */
 :where(.rag) { display: inline-flex; align-items: center; gap: 14px; font-weight: 600; white-space: nowrap; }
 :where(.rag)::before { content: ""; flex: none; width: 0.9em; height: 0.9em; border-radius: 50%; background: var(--rag, var(--muted)); }
-:where(.rag.green) { --rag: #1F9D55; }
+:where(.rag.green) { --rag: var(--good); }
 :where(.rag.amber) { --rag: #F2A900; }
 :where(.rag.red) { --rag: var(--bad); }
 /* Status marks for comparisons: yes, partly, no. */
@@ -1260,9 +1262,8 @@
 :where(.frame[data-preset="t1a"] .gantt .phase-2) { --status: #009688; --status-ink: #FCFCFC; }
 :where(.frame[data-preset="t1a"] .gantt .phase-3) { --status: #FF8A3D; --status-ink: #111729; }
 :where(.frame[data-preset="t1a"] .gantt .phase-4) { --status: #80CBC4; --status-ink: #111729; }
-:where(.frame[data-preset="t1a"] .rag.green) { --rag: #009688; }
 :where(.frame[data-preset="t1a"] .rag.amber) { --rag: #FFB300; }
-:where(.frame[data-preset="t1a"]) { --bad: #EF5350; }
+:where(.frame[data-preset="t1a"]) { --good: #009688; --bad: #EF5350; }
 :where(.frame[data-preset="t1a"] .gantt > .months) { background: color-mix(in srgb, var(--surface) calc(var(--tone) * 100%), #D9DCE3); }
 :where(.frame[data-preset="t1a"] .gantt > .bars > p.milestone) { border-left-color: color-mix(in srgb, #C792EA calc(var(--tone) * 100%), #6A1B9A); }
 :where(.frame[data-preset="t1a"] ul.owners.cards > li) { background: #111729; color: #FCFCFC; box-shadow: 0 24px 64px color-mix(in srgb, var(--owner) 30%, transparent), 0 0 0 calc(var(--tone) * 2px) #2A3247; --owner: #C792EA; }
