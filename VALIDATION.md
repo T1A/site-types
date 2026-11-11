@@ -1,6 +1,8 @@
 # Validation
 
-Package: `t1a-slides@1.6.9`, built 2026-11-06.
+Package: `t1a-slides@1.6.10`, built 2026-11-12.
+
+1.6.10 adds chart rules and tokens in `slide.css` and `SKILL.md`: `div.chart-head` puts the legend above the chart with `span.swatch` marks; `--good` and `--bad` colour the one part a slide is about, green for good and red for bad, never the accent, with the rest in the neutral grays `--shade-1` to `--shade-4`; `ul.meters` takes `li.good` and `li.bad`; a legend or direct labels, not both; parts of a whole only as a donut of at most five parts, no pie charts; the Gantt legend keeps its padding. Checked by rendering test decks in check mode: t1a light and dark, line, bar, waterfall, Likert, meter and donut charts.
 
 1.6.9 adds blocks and rules in `slide.css` and `SKILL.md`: `div.browser` showcase, `div.demo` screen-recording layout, live HTML screens and `video` in device frames, `ul.meters` progress bars, `span.rag` status marks, Gantt phase classes, white ink on the t1a teal panel, phone caption strips that reach the phone; rules for one-line eyebrows, no builds on joined diagrams, journeys only for two-party projects, recordings first in product slides, and no value axis when every bar has its value. Checked locally by rendering test decks (web product, mobile, demo, SteerCo, assessment, RFP, QBR) on the t1a preset; the viewer is unchanged apart from its version constant.
 
