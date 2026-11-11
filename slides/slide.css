@@ -711,13 +711,19 @@
 :where(ul.meters > li)::before, :where(ul.meters > li)::after { content: ""; position: absolute; inset: auto auto 0 0; width: 100%; height: 16px; margin: 0; border: 0; border-radius: 999px; background: color-mix(in srgb, var(--foreground) 10%, transparent); }
 :where(ul.meters > li)::after { width: calc(var(--value, 0) * 1%); background: var(--foreground); }
 :where(ul.meters > li.highlight)::after { background: var(--accent); }
+:where(ul.meters > li.good)::after { background: var(--good); }
+:where(ul.meters > li.bad)::after { background: var(--bad); }
 
+/* --good and --bad mark good and bad values in charts and status marks. */
+:where(.frame) { --good: #1F9D55; --bad: #E5484D; }
+/* Neutral shades for chart parts that are not the focus, from strong to faint. */
+:where(.frame) { --shade-1: color-mix(in oklab, var(--foreground) 72%, var(--background)); --shade-2: color-mix(in oklab, var(--foreground) 52%, var(--background)); --shade-3: color-mix(in oklab, var(--foreground) 34%, var(--background)); --shade-4: color-mix(in oklab, var(--foreground) 18%, var(--background)); }
 /* RAG status of a workstream or project: <span class="rag amber">Amber</span>, a colored dot before the word. */
 :where(.rag) { display: inline-flex; align-items: center; gap: 14px; font-weight: 600; white-space: nowrap; }
 :where(.rag)::before { content: ""; flex: none; width: 0.9em; height: 0.9em; border-radius: 50%; background: var(--rag, var(--muted)); }
-:where(.rag.green) { --rag: #1F9D55; }
+:where(.rag.green) { --rag: var(--good); }
 :where(.rag.amber) { --rag: #F2A900; }
-:where(.rag.red) { --rag: #E5484D; }
+:where(.rag.red) { --rag: var(--bad); }
 /* Status marks for comparisons: yes, partly, no. */
 :where(.yes, .part, .no) { display: inline-block; width: 40px; height: 40px; border-radius: 50%; vertical-align: middle; background: center / 64% no-repeat; }
 :where(.yes) { background-color: var(--accent); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4L18 8'/%3E%3C/svg%3E"); }
@@ -1002,15 +1008,25 @@
 :where(.gantt .phase-2) { --status: var(--foreground); --status-ink: var(--background); }
 :where(.gantt .phase-3) { --status: color-mix(in srgb, var(--accent) 40%, var(--background)); --status-ink: var(--foreground); }
 :where(.gantt .phase-4) { --status: var(--surface); --status-ink: var(--foreground); }
-:where(.gantt > ul.legend) { flex-direction: row; top: 148px; gap: 6px; }
-:where(.gantt > ul.legend > li) { justify-content: center; min-width: 160px; padding: 2px 20px; border-radius: 999px; background: var(--status); color: var(--status-ink); font-size: 21px; }
-
 /* A legend at the top right, for comparison marks or Gantt statuses. */
 :where(ul.legend) { position: absolute; top: 112px; right: 128px; gap: 12px; font-size: 24px; }
 :where(section:has(ul.legend) > h2) { padding-right: 440px; }
 :where(ul.legend > li) { display: flex; align-items: center; gap: 16px; padding: 0; max-width: none; }
 :where(ul.legend > li)::before { content: none; }
 :where(ul.legend :is(.yes, .part, .no)) { width: 32px; height: 32px; }
+/* A chart head: the h4 and the chart's legend on one line, the legend in the flow, not at the top right. */
+:where(.chart-head) { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 48px; }
+:where(.chart-head > h4) { margin: 0; }
+:where(.chart-head > ul.legend) { position: static; flex-direction: row; flex-wrap: wrap; gap: 8px 32px; font-size: 22px; }
+:where(section:has(.chart-head > ul.legend):not(:has(> ul.legend, .gantt > ul.legend)) > h2) { padding-right: 0; }
+/* Legend swatches: <span class="swatch" style="--color: var(--accent)"></span>; .dot for points, .line and .dash for lines. */
+:where(.swatch) { flex: none; display: inline-block; width: 22px; height: 22px; border-radius: 4px; background: var(--color, var(--foreground)); }
+:where(.swatch.dot) { border-radius: 50%; }
+:where(.swatch.line) { height: 4px; border-radius: 2px; }
+:where(.swatch.dash) { height: 0; border-top: 4px dashed var(--color, var(--muted)); border-radius: 0; background: none; }
+:where(.gantt > ul.legend) { flex-direction: row; top: 148px; gap: 6px; }
+:where(.gantt > ul.legend > li) { justify-content: center; min-width: 160px; padding: 2px 20px; border-radius: 999px; background: var(--status); color: var(--status-ink); font-size: 21px; }
+
 
 /* Ratings in a comparison: <span class="rating"><b>$$$</b>$$</span>, b holds the filled marks; .stars for stars. */
 :where(.rating) { display: block; font-size: 42px; line-height: 1.1; letter-spacing: 0.04em; color: var(--border); white-space: nowrap; }
@@ -1248,9 +1264,8 @@
 :where(.frame[data-preset="t1a"] .gantt .phase-2) { --status: #009688; --status-ink: #FCFCFC; }
 :where(.frame[data-preset="t1a"] .gantt .phase-3) { --status: #FF8A3D; --status-ink: #111729; }
 :where(.frame[data-preset="t1a"] .gantt .phase-4) { --status: #80CBC4; --status-ink: #111729; }
-:where(.frame[data-preset="t1a"] .rag.green) { --rag: #009688; }
 :where(.frame[data-preset="t1a"] .rag.amber) { --rag: #FFB300; }
-:where(.frame[data-preset="t1a"] .rag.red) { --rag: #EF5350; }
+:where(.frame[data-preset="t1a"]) { --good: #009688; --bad: #EF5350; }
 :where(.frame[data-preset="t1a"] .gantt > .months) { background: color-mix(in srgb, var(--surface) calc(var(--tone) * 100%), #D9DCE3); }
 :where(.frame[data-preset="t1a"] .gantt > .bars > p.milestone) { border-left-color: color-mix(in srgb, #C792EA calc(var(--tone) * 100%), #6A1B9A); }
 :where(.frame[data-preset="t1a"] ul.owners.cards > li) { background: #111729; color: #FCFCFC; box-shadow: 0 24px 64px color-mix(in srgb, var(--owner) 30%, transparent), 0 0 0 calc(var(--tone) * 2px) #2A3247; --owner: #C792EA; }
