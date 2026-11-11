@@ -716,6 +716,8 @@
 
 /* --good and --bad mark good and bad values in charts and status marks. */
 :where(.frame) { --good: #1F9D55; --bad: #E5484D; }
+/* Neutral shades for chart parts that are not the focus, from strong to faint. */
+:where(.frame) { --shade-1: color-mix(in oklab, var(--foreground) 72%, var(--background)); --shade-2: color-mix(in oklab, var(--foreground) 52%, var(--background)); --shade-3: color-mix(in oklab, var(--foreground) 34%, var(--background)); --shade-4: color-mix(in oklab, var(--foreground) 18%, var(--background)); }
 /* RAG status of a workstream or project: <span class="rag amber">Amber</span>, a colored dot before the word. */
 :where(.rag) { display: inline-flex; align-items: center; gap: 14px; font-weight: 600; white-space: nowrap; }
 :where(.rag)::before { content: ""; flex: none; width: 0.9em; height: 0.9em; border-radius: 50%; background: var(--rag, var(--muted)); }
