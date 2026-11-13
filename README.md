@@ -4,7 +4,7 @@ Site type packages for SecondStack Sites. Each type lives in its own folder and 
 
 | Folder | Package | Description |
 | --- | --- | --- |
-| [`slides/`](./slides) | `t1a-slides@1.6.10` | Presentation decks with t1a, SecondStack, LakeSentry, Antares and Swiss themes. |
+| [`slides/`](./slides) | `t1a-slides@1.6.11` | Presentation decks with t1a, SecondStack, LakeSentry, Antares and Swiss themes. |
 
 ## Install from GitHub
 
@@ -16,7 +16,7 @@ https://github.com/T1A/site-types/tree/main/slides
 
 Use the folder URL, including `/tree/main/slides`. **Reload sources** fetches later package versions from this branch. For a fixed revision, replace `main` with a full commit SHA.
 
-The package keeps the `t1a-slides` identity and project data contract. Version 1.6.10 is the staging-tested 1.6.6 package plus design rules in `SKILL.md`, a fix for slide thumbnails that inherited centred text from their button, and new blocks for product and status decks. Chat requires exactly one installed Slides-family type.
+The package keeps the `t1a-slides` identity and project data contract. Version 1.6.11 is the staging-tested 1.6.6 package plus design rules in `SKILL.md`, a fix for slide thumbnails that inherited centred text from their button, and new blocks for product and status decks. Chat requires exactly one installed Slides-family type.
 
 ## Slides
 

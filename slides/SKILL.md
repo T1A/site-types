@@ -1,4 +1,4 @@
-# Slides 1.6.10
+# Slides 1.6.11
 
 A Slides site is a presentation. The viewer is part of the site type: it shows each slide in a 16:9 frame, with keyboard and touch navigation, an overview, a presenter window with notes and a timer, fullscreen, light and dark themes and print to PDF. You write only the deck data: one JSON file and one HTML fragment per slide. Do not write `index.html`, CSS files or JavaScript.
 
@@ -162,6 +162,27 @@ The `t1a` preset is the T1A corporate template; a t1a deck must look like that t
 
 - Tables are the last resort; prefer stats or a chart. Draw charts as inline SVG in `var(--foreground)` with one highlight series: `var(--good)` or `var(--bad)` when it is good or bad, else `var(--accent)`.
 
+## Charts
+
+Rules 1 and 2 of the design rules also apply. A chart must read without the speaker: its title, labels, units and values are all on the slide.
+
+- Choose the chart by the task. Categories compared: horizontal bars. Change over time: columns, or a line for many periods. Distribution: a histogram. Two measures related: a scatter. Parts of a whole: a donut, or `ul.meters` for shares. Fact against plan: the fact bar over a pale plan bar, or a dashed target line.
+- Bars, columns and waterfalls start at zero. A line or a scatter may start above zero so that a small change shows. When one bar is many times larger than the rest, cut it with a small wavy break and write its value, so the other bars keep their height.
+- Draw at most three lines in one line chart. For more series, draw one small chart per series in a row, on one shared scale unless only the shape matters (then say "each on its own scale" in the `h4`), or color one line and draw the others in `var(--shade-3)`.
+- The gap between bars is at most one bar wide.
+- Sort bars by value, largest first. Keep a natural order (months, quarters, a fixed list of stages) as it is; use A to Z only for a long list that people search.
+- Axis ticks go in steps of 1, 2 or 5 times a power of ten (0, 20, 40; 0, 250, 500), never 10.8, 12, 13.2.
+- No vertical or rotated text. Shorten long labels and move their shared part into the `h4` ("01" to "30" under "Daily sales, April 2026"). Write long names short ("Vasilyeva T." not the full name).
+- Align category labels to the left and numbers in a column to the right; a value at the end of a bar sits right after the bar.
+- When values are not written (a scatter, a dense line), write the axis titles horizontally: the vertical axis title above the axis, the horizontal axis title at its right end under it.
+- Write numbers with at most four or five digits: thousands as K, millions as M, billions as B (239M, not 239,412,000). Use thousands separators, the same number of decimals across one chart, whole percentages, a "+" on a growth and "pp" for a change in percentage points.
+- The `h4` names the measure, the unit and the period: "Sales, May 2026, $K". When the categories need a name ("Region", "Manager"), put it in `var(--muted)` above the category labels.
+- No 3D, shadows or gradients on bars, slices or points.
+- Separate the parts of a donut or a stacked bar with a 2-3px gap in `var(--background)`.
+- Colors: when no part is the focus and every category must be told apart, a few distinct colors; otherwise one focus color and grays (rule 1); for values that grow (a heatmap, a scale, a stack of many parts), shades of one color, `var(--shade-1)` to `var(--shade-4)` or the accent at several strengths. Make overlapping points of a scatter semi-transparent.
+- No asterisks or footnotes in chart titles and labels; say it in the label or the `aside`.
+- When a slide has two to four charts, give each an `h4` that asks the question it answers ("Are the regions on target?") and keep them to one topic.
+
 ## Interactive slides
 
 Use an app page for anything that reacts: a poll, a form, a quiz, a small game, a live chart. Inline slide HTML is enough for everything else, including CSS animation and hover effects.
@@ -207,7 +228,7 @@ The type's themes are in `_type/slides.json` of its viewer files. Each has an `i
 Rules from design reviews of generated decks. Check every slide against them before you publish.
 
 1. A chart explains every color it uses. When a chart has more than one series or a highlighted part (for example an optional add-on in `var(--accent)`), add a `ul.legend` that names each color, or label the parts directly on the chart; not both. A single highlighted bar needs this too: name what the accent means ("This sprint", "Forecast"); a bold axis label does not explain a color. A reader must not have to guess what a color means. Put a chart's legend above the chart, in `div.chart-head` with its `h4`: on the `h4` line, or on the next line when it does not fit. Never put the legend under the chart or at the top right of the slide beside the title. Color the one part the slide is about and keep the rest neutral (`var(--foreground)` and the grays `var(--shade-1)` to `var(--shade-4)`, strong to faint): one red miss among neutral bars, not a red bar among green ones. That color means good or bad: `var(--bad)` (red) for a missed target, an overrun, incidents, risks or another bad value, `var(--good)` (green) for savings, a met target or another good result when it is the point of the slide. Do not show a good or bad value in the accent: not every reader knows the brand colors, and an orange or purple accent does not read as good. Use the accent only for a neutral highlight (this quarter, a forecast), never for a bad value: the accent is green or teal in some themes, so in t1a dark highlight a neutral part in `var(--foreground)` against `var(--muted)`. The reader sees the color before the label; the color must not say the opposite of the text.
-2. Draw a chart the way the template's `table-chart` slide does: an `h4` above it that names the measure and its unit, series labels in `var(--muted)`, and `role="img"` with an `aria-label` that says what the chart shows. Write the value at each bar or point; when every value is written, draw no value axis, tick numbers or gridlines, only a baseline in `var(--border)`. Use gridlines and an axis only when values are not written, for example a dense line chart. Show percentages of a whole (a share, a completion, a utilisation) as `ul.meters`, not as bars on an axis: each bar sits on a pale track that stands for 100%, so axes and gridlines are not needed. Show the parts of one whole as a donut, never a pie chart. A donut has at most five parts: merge the small ones into "Other". Start the largest part at 12 o'clock and go clockwise from large to small, label each part next to it with its name and value, and add no legend. Put the total or the key share in its hole. Draw it as large as the slide allows, about 520-640px across for one chart, or put it in one half of `split` with the conclusion in the other half; a small pie in the middle of empty space is wrong.
+2. Give a chart an `h4` above it that names the measure and its unit, series labels in `var(--muted)`, and `role="img"` with an `aria-label` that says what the chart shows. Write the value at each bar or point; when every value is written, draw no value axis, tick numbers or gridlines, only a baseline in `var(--border)`. Use gridlines and an axis only when values are not written, for example a dense line chart. Show percentages of a whole (a share, a completion, a utilisation) as `ul.meters`, not as bars on an axis: each bar sits on a pale track that stands for 100%, so axes and gridlines are not needed. Show the parts of one whole as a donut, never a pie chart. A donut has at most five parts: merge the small ones into "Other". Start the largest part at 12 o'clock and go clockwise from large to small, label each part next to it with its name and value, and add no legend. Put the total or the key share in its hole. Draw it as large as the slide allows, about 520-640px across for one chart, or put it in the wide column of `div.cols wide-right` with the conclusion in the narrow one; a small donut in the middle of empty space is wrong.
 3. Copy a template layout with its proportions and its placement: the same cells, the same order, the same alignment. Do not stretch, squeeze or move its parts (for example, the partner case keeps the title and the tags in the top cell and the text in the bottom cell).
 4. Keep the template's type sizes. Text in the same role (slide titles, card titles, stats) has the same size on every slide; do not enlarge a title to fill space or shrink it to fit more text: shorten the text instead.
 5. In a dark slide or a dark deck, no white or light block stays: cards, tables, panels, screens and drawings use `var(--surface)`, `var(--background)` and `var(--border)`, so they follow the scheme.
@@ -225,7 +246,7 @@ Rules from design reviews of generated decks. Check every slide against them bef
 
 The package also holds `templates/<theme>/project/`: the designer's original reference decks for all five themes. The t1a library includes 28 corporate slides with panel, timeline, journey, team, comparison and product layouts. Read its `deck.json` and the relevant slide files before adapting those layouts. Publish only the slides needed by the confirmed plan.
 
-1. Call `site_types` with `name="t1a-slides"`. Use the exact `type` it reports, for example `t1a-slides@1.6.10`, in every call below.
+1. Call `site_types` with `name="t1a-slides"`. Use the exact `type` it reports, for example `t1a-slides@1.6.11`, in every call below.
 2. Call `import_site` with that `type` and a new directory, for example `/workspace/sites/<name>-preview/`, read `_type/slides.json` there and choose the theme (Themes).
 3. Plan the deck: the story, the sections and the slide ids, one idea per slide. Start with a `title` slide and end with a closing slide.
 4. Write `project/deck.json` with the complete `order` first, then the slide files one by one. The viewer shows a placeholder for each listed slide whose file does not exist yet and fills it when the file appears, so you can publish early and keep writing.
@@ -235,7 +256,7 @@ The package also holds `templates/<theme>/project/`: the designer's original ref
 
 The workspace cannot open the published site. Check the deck locally with the viewer package:
 
-1. Use the directory from Build step 2, or call `import_site` with `type="t1a-slides@1.6.10"` and a new directory, for example `/workspace/sites/<name>-preview/`. It contains `index.html` and `_type/`.
+1. Use the directory from Build step 2, or call `import_site` with `type="t1a-slides@1.6.11"` and a new directory, for example `/workspace/sites/<name>-preview/`. It contains `index.html` and `_type/`.
 2. Copy the deck data into it, replacing any earlier copy, so deleted files do not linger: `rm -rf /workspace/sites/<name>-preview/project && cp -r /workspace/sites/<name>/project /workspace/sites/<name>-preview/`. Repeat after each change. Never publish the preview directory.
 3. Serve it: `python3 -m http.server 8765 --bind 127.0.0.1 --directory /workspace/sites/<name>-preview` in the background.
 4. Open `http://127.0.0.1:8765/?check=1` in the workspace browser. Check mode lists every slide with its issues and outlines overflowing elements. When `document.documentElement.dataset.slidesCheck` is `"done"`, the full report is the JSON text of `#slides-check-report` and the `[slides-check]` console line. `ok` is `false` while any error remains. While slides are still missing, the browser console also shows 404 errors for their files; that is expected.
@@ -243,7 +264,7 @@ The workspace cannot open the published site. Check the deck locally with the vi
 
 ## Publish
 
-- Publish the data directory, `/workspace/sites/<name>/`, which holds `project/` and optionally `_spot.json`, with `publish_site(path=..., site=<name>, type="t1a-slides@1.6.10")`. It needs no `index.html`; never include the preview files. Leave `type_target` empty.
+- Publish the data directory, `/workspace/sites/<name>/`, which holds `project/` and optionally `_spot.json`, with `publish_site(path=..., site=<name>, type="t1a-slides@1.6.11")`. It needs no `index.html`; never include the preview files. Leave `type_target` empty.
 - Only files under `project/` and `_spot.json` belong in it. Publishing refuses other files and names the first offending path; every `.json` file must be valid JSON.
 - An edit of an existing deck starts with `import_site(site=<name>, path=<empty directory>)`, which reports the exact type to publish with. The owner can also change slide text by hand, and those edits are saved into the slide files, so never edit from an older copy. Edit, check and publish with that `type`. A pin mismatch error (409) means the site now pins another version: import it again and redo the edit there.
 - Give the user the link with one sentence on what the deck covers. The presenter view opens with `S`, the overview with `O`, fullscreen with `F`; browser print saves a PDF with one page per slide, and the toolbar's download button a PowerPoint file.
