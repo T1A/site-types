@@ -1,6 +1,8 @@
 # Validation
 
-Package: `t1a-slides@1.6.10`, built 2026-11-12.
+Package: `t1a-slides@1.6.11`, built 2026-11-13.
+
+1.6.11 adds a Charts section to `SKILL.md` from the T1A dataviz course: chart type by task, zero baselines and scale breaks, at most three lines, sorting, tick steps, no rotated text, number formats, chart titles with measure, unit and period, no 3D or gradients, gaps between donut parts, no footnotes in chart labels, question titles for several charts. Checked by rendering a ten-slide sales deck in check mode.
 
 1.6.10 adds chart rules and tokens in `slide.css` and `SKILL.md`: `div.chart-head` puts the legend above the chart with `span.swatch` marks; `--good` and `--bad` colour the one part a slide is about, green for good and red for bad, never the accent, with the rest in the neutral grays `--shade-1` to `--shade-4`; `ul.meters` takes `li.good` and `li.bad`; a legend or direct labels, not both; parts of a whole only as a donut of at most five parts, no pie charts; the Gantt legend keeps its padding. Checked by rendering test decks in check mode: t1a light and dark, line, bar, waterfall, Likert, meter and donut charts.
 
